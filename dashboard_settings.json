@@ -1,0 +1,8 @@
+{
+  "user_add_limit": 0,
+  "exp_limit": 0,
+  "level_limit": 0,
+  "auto_restart_enabled": true,
+  "auto_restart_interval_hours": 1.5,
+  "auto_restart_break_minutes": 1
+}
