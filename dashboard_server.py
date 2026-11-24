@@ -6,8 +6,9 @@ Embedded Async Web Server (aiohttp)
 
 import asyncio
 import json
-import hashlib
-try:
+import hashlib 
+import httpx
+try: 
     import orjson as _orjson
 except Exception:
     _orjson = None
@@ -2182,6 +2183,27 @@ async def handle_add_account(request: web.Request) -> web.Response:
 
         with open(accounts_file, "w", encoding="utf-8") as f:
             json.dump(existing, f, indent=2)
+            # ✅ GitHub par accounts.json auto-save karein
+        async def _push_gh(data_list):
+            tok = os.environ.get("GITHUB_TOKEN", "").strip()
+            repo = os.environ.get("GITHUB_REPO", "").strip()
+            if not (tok and repo):
+                return
+            url = f"https://api.github.com/repos/{repo}/contents/accounts.json"
+            hdrs = {"Authorization": f"Bearer {tok}", "Accept": "application/vnd.github+json"}
+            try:
+                async with httpx.AsyncClient(timeout=15.0) as c:
+                    r = await c.get(url, headers=hdrs)
+                    sha = r.json().get("sha") if r.status_code == 200 else None
+                    b64 = _b64.b64encode(json.dumps(data_list, indent=2).encode()).decode()
+                    body = {"message": "Save new ID", "content": b64}
+                    if sha:
+                        body["sha"] = sha
+                    await c.put(url, headers=hdrs, json=body)
+            except Exception:
+                pass
+
+        asyncio.create_task(_push_gh(existing))
 
         # মালিক নথিভুক্ত করো (User হলে) — Admin যোগ করলে মালিক থাকে না, শুধু Admin দেখবে
         if role == "user" and owner:
