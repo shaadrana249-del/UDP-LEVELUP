@@ -4,24 +4,6 @@
     "password": "55AECC25DE6253A899D8D2119D1D7DC75145A23F50319AF8CA46448D449645B7"
   },
   {
-    "uid": "8494194119",
-    "password": "RLX-MKJT66E419PMFM75LMI7IXV6TQ"
-  },
-  {
-    "token": "07724c2eb593990e8e6ecfec4f0f00d6785d2ca050a6d2c384a1a6eeba7b016f"
-  },
-  {
-    "token": "3864b404aba5c04d3c18d48018d616c0542b8b1bd1380f862966ab064b1b4bbd"
-  },
-  {
-    "uid": "8494194654",
-    "password": "RLX-R35YJBB0UF5CKFXBS22REDMGI2"
-  },
-  {
-    "uid": "8494194842",
-    "password": "RLX-MO77SMNOD1E2KMIP2698W6F8ZO"
-  },
-  {
     "uid": "8496878274",
     "password": "RLX-KAFC84537K3PUKRTZ9GU5CVMZM"
   },
@@ -166,9 +148,6 @@
     "password": "75170AD67ABC0EA08E0EC1E1C59EBEBEA3FBF60C999EA79111AC6C2EA6C260C1"
   },
   {
-    "token": "d05091f609b906171baa11f063c68f197fa1f1effe17f1c834c9feaac7abbb85"
-  },
-  {
     "uid": "8419777828",
     "password": "telegram@raigenffofc-msyih5"
   },
@@ -183,5 +162,9 @@
   {
     "uid": "8459114393",
     "password": "3904B6038065EA3D94DA326660ABE70CB6279ED5E5FB9FD01EFF3D98480A7F9B"
+  },
+  {
+    "uid": "8120978181",
+    "password": "F49BF2647E28632D7C11FC034EDBCA31AB9CCE5A80C405A1B71CA0132C2B0211"
   }
 ]
